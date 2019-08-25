@@ -51,3 +51,11 @@ services:
       KAFKA_CLIENT_ID: divisn.router.client
       KAFKA_GROUP_ID: divisn.consumer
       KAFKA_RETRIES: 3
+
+  db:
+    build: db/
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PW}
+      POSTGRES_DB: divisn
